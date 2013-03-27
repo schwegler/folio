@@ -11,4 +11,12 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 
-//= require_tree .
+//= require jquery
+//= require angular
+//= require angular-resource
+//= require app/assets
+//= require app/services
+//= require app/controllers
+//= require app/filters
+//= require app/directives
+//= require app/app

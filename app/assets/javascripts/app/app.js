@@ -1,13 +1,14 @@
-angular.module('app', [
-'info']);
+(function(){
+  var app;
+  app = angular.module('app', ['app.services','app.controllers','app.filters','app.directives']);
 
-angular.module('app').config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+  app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
-    $routeProvider.otherwise({redirectTo:'/info'});
-}]);
-
-angular.module('app').controller("AppCtrl", ['$scope', function($scope) {
-    console.log('In AppCtrl');
-
-
-}] );
+    $routeProvider.when('/info', {
+      controller: 'InfoCtrl',
+      templateUrl: ASSETS['info']
+    }).otherwise({
+      redirectTo:'/info',
+    });
+  }]);
+})();
