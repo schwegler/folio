@@ -1,6 +1,9 @@
 DemoRailsAngularjs::Application.routes.draw do
 
 
+  resources :references
+
+
   get "home/index"
 
   devise_for :users
